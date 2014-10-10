@@ -15,7 +15,8 @@ Make sure you have a Twilio account set up and that you have your account ID and
 * Create a server.js file that uses express and serves static files out of a `/public` directory.
 * Make sure you are using bodyParser.json() as middleware
 
-##Step 2: Make a POST `/support/:from_number/messages/` endpoint
+##Step 2: Make endpoints
+##`/support/:from_number/messages/` 
 
 ##Step 3: Use Zapier to receive SMS  
 
