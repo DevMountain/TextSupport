@@ -16,7 +16,7 @@ Make sure you have a Twilio account set up and that you have your account ID and
 * Make sure you are using bodyParser.json() as middleware
 
 ##Step 2: Make endpoints
-##`/support/:from_number/messages/` 
+###`/support/:from_number/messages/` 
 
 ##Step 3: Use Zapier to receive SMS  
 
