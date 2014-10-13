@@ -99,3 +99,6 @@ This endpoint will take a `resource_name` and return a support resource. If the 
   * **cease-and-desist** (download [here](https://devmounta.in/files/FakeCeaseandDesist.pdf))
   * **helpful-infographic** (download [here](https://devmounta.in/files/helpful-infographic.jpg))
 
+When serving these files based on an endpoint, use the `sendFile` method found on the Express response object. Here's a SO answer that can help: http://stackoverflow.com/a/11569297/1160485
+
+For the 404 page, make a [clever 404 page](http://www.hongkiat.com/blog/60-really-cool-and-creative-error-404-pages/) and serve it up if the `resource_name` doesn't match one of those found above.
