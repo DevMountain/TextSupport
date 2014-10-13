@@ -85,3 +85,4 @@ Once the text has been sent successfully, add the record to the Firebase collect
 
 ![support-route-done](http://cl.ly/image/2u3i3i2Q2m0P/Screen%20Shot%202014-10-13%20at%2011.09.01%20AM.png)
 
+Now, add in front-end necessary (including a service) for a support agent to reply to the conversation.
