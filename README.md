@@ -95,7 +95,7 @@ For our final step, we'll make some resources that will be easy to send to our c
 This endpoint will take a `resource_name` and return a support resource. If the resource_name matches one of the resources we've created, we'll return the file. If it doesn't match, we'll return a 404 (not found) page.
 
 * Use this list as your resource list
-  * terms-and-conditions (download [here](https://devmounta.in/files/FakeTermsandConditions.pdf))
-  * cease-and-desist (download [here](https://devmounta.in/files/FakeCeaseandDesist.pdf))
-  * helpful-infographic (download [here](https://devmounta.in/files/helpful-infographic.jpg))
+  * **terms-and-conditions** (download [here](https://devmounta.in/files/FakeTermsandConditions.pdf))
+  * **cease-and-desist** (download [here](https://devmounta.in/files/FakeCeaseandDesist.pdf))
+  * **helpful-infographic** (download [here](https://devmounta.in/files/helpful-infographic.jpg))
 
