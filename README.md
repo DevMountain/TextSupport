@@ -86,3 +86,16 @@ Once the text has been sent successfully, add the record to the Firebase collect
 ![support-route-done](http://cl.ly/image/2u3i3i2Q2m0P/Screen%20Shot%202014-10-13%20at%2011.09.01%20AM.png)
 
 Now, add in front-end necessary (including a service) for a support agent to reply to the conversation.
+
+##Step 5: Add resources endpoint
+For our final step, we'll make some resources that will be easy to send to our customers who are needing support. We'll start by making a server-side endpoint:
+
+####`GET /support/resources/:resource_name`
+
+This endpoint will take a `resource_name` and return a support resource. If the resource_name matches one of the resources we've created, we'll return the file. If it doesn't match, we'll return a 404 (not found) page.
+
+* Use this list as your resource list
+  * terms-and-conditions (download [here](https://devmounta.in/files/FakeTermsandConditions.pdf))
+  * cease-and-desist (download [here](https://devmounta.in/files/FakeCeaseandDesist.pdf))
+  * helpful-infographic (download [here](https://devmounta.in/files/helpful-infographic.jpg))
+
