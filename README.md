@@ -34,7 +34,7 @@ We'll use Firebase and a service called Zapier to detect new requests to our Tex
 https://<my-app-name>.firebaseio.com/numbers
 ```
 
-* Use the `on()` handler to detect when a new messages have been added to your tickets collection. [Docs here.](https://www.firebase.com/docs/web/api/query/on.html) You'll listen for the `child_added` event. 
+* Use the `on()` handler to detect when a new messages have been added to your numbers collection. [Docs here.](https://www.firebase.com/docs/web/api/query/on.html) You'll listen for the `child_added` event. 
 * Create a new "zap" on Zapier that triggers when a SMS is sent to your Twilio number. Have the trigger cause a new Firebase child to be added to `/numbers`.
 
 When matching up the Twilio SMS with the Firebase child record, you can use something like this:
@@ -57,17 +57,31 @@ This will be a static template that will display the Twilio phone number and ins
 Let's have the `otherwise` catch-all point to this route as well.
 
 ####`/support`
-This will be the route that will show all tickets and their conversations.
+This will be the route that will show all numbers and their conversations. When you're finished, it should look something like this:
+
+![first-route-done](http://cl.ly/image/2v1q3v0F453Y/Screen%20Shot%202014-10-13%20at%2010.19.31%20AM.png)
+
 * Set up a controller and a template for this route.
-* In the controller, point a scope variable to the 
+* In the controller, point a scope variable to a $firebase-wrapped object for the `/numbers` url in your Firebase Forge. (Don't forget to include AngularFire in your index.html and inject the dependencies in app.js and your controller).
+* In the template, ng-repeat over numbers to show all the conversations for a number. Then ng-repeat over each message for that number.
+
+Remember, Firebase is storing all of this information as objects, not arrays. So it will be much more helpful for you to use the object syntax for ng-repeat:
+
+```
+ng-repeat="(key, val) in object"
+```
+
+This will help you retrieve the phone number.
+
+##Step 4: Add "reply" ability
+Now we'll make it so that messages sent from our dashboard will be saved in Firebase and sent to the user.
+
+Let's start by creating an API endpoint in our server.js:
 
 ####`POST /support/messages/`
-Using the twilio-node API, make it so that any POST sent to the above endpoint with will send a text to your number. Have the message passed as a JSON object.
+Using the twilio-node API, make it so that any POST sent to the above endpoint with will send a text to the originating number. You should probably pass the "to" number in the POST JSON data.
 
-Format the text to say something like this:
-`New support request from TextSupport: <message_goes_here>`
+Once the text has been sent successfully, add the record to the Firebase collection. You might consider marking support messages differently than user messages. That way your interface could make it a little easier to distinguish outgoing from incoming messages. Maybe like this:
 
-##Step 3: Use Zapier to receive SMS  
+![support-route-done](http://cl.ly/image/2u3i3i2Q2m0P/Screen%20Shot%202014-10-13%20at%2011.09.01%20AM.png)
 
-##Step 4: Build Front-end
-Use Angular to build the front-end of the application. Keep the HTML, CSS, and JS in the /public folder.
