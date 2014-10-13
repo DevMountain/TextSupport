@@ -34,7 +34,6 @@ We'll use Firebase and a service called Zapier to detect new requests to our Tex
 https://<my-app-name>.firebaseio.com/numbers
 ```
 
-* Use the `on()` handler to detect when a new messages have been added to your numbers collection. [Docs here.](https://www.firebase.com/docs/web/api/query/on.html) You'll listen for the `child_added` event. 
 * Create a new "zap" on Zapier that triggers when a SMS is sent to your Twilio number. Have the trigger cause a new Firebase child to be added to `/numbers`.
 
 When matching up the Twilio SMS with the Firebase child record, you can use something like this:
