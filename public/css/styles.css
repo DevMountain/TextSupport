@@ -1,0 +1,34 @@
+.phone-block {
+  margin-top: 45px;
+}
+
+.phone-block h3 {
+  margin-top: 0;
+}
+
+.ticket {
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+  border-left-color: #5bc0de;
+}
+
+.ticket h4 {
+  color: #5bc0de;
+}
+
+.ticket p {
+  margin-left: 15px;
+  margin-top: 5px;
+  font-size: 125%;
+}
+
+p.is_support {
+  font-style: italic;
+}
+
+.btn {
+  margin-left: 15px;
+}

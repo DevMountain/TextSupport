@@ -1,0 +1,27 @@
+{
+  "name": "TextSupport",
+  "version": "0.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/DevMountain/TextSupport.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DevMountain/TextSupport/issues"
+  },
+  "homepage": "https://github.com/DevMountain/TextSupport",
+  "dependencies": {
+    "express": "~4.9.7",
+    "body-parser": "~1.9.0",
+    "twilio": "~1.7.0",
+    "firebase": "~1.1.1",
+    "moment": "~2.8.3"
+  }
+}
