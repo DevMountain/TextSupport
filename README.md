@@ -25,23 +25,41 @@ Make sure you have a Twilio account set up and that you have your account ID and
 * Create an account with Zapier.
 * Create a new project in Firebase for TextSupport.
 
-##Step 2: Make initial Firebase trigger
+##Step 2: Make Twilio -> Zapier -> Firebase trigger
 We'll use Firebase and a service called Zapier to detect new requests to our TextSupport system. 
 * Require the `firebase` library. 
 * Create a new Firebase reference to your projet in Node. (One of the cool things about Firebase is that they have the exact same APIs for Javascript, whether front-end or back.) The url should be:
 
 ```
-https://<my-app-name>.firebaseio.com/tickets
+https://<my-app-name>.firebaseio.com/numbers
 ```
 
 * Use the `on()` handler to detect when a new messages have been added to your tickets collection. [Docs here.](https://www.firebase.com/docs/web/api/query/on.html) You'll listen for the `child_added` event. 
-* Create a new "zap" on Zapier that triggers when a SMS is sent to your Twilio number. Have the trigger cause a new Firebase child to be added to `/tickets`.
+* Create a new "zap" on Zapier that triggers when a SMS is sent to your Twilio number. Have the trigger cause a new Firebase child to be added to `/numbers`.
 
 When matching up the Twilio SMS with the Firebase child record, you can use something like this:
 
-![img-firebase-zapier](http://cl.ly/image/1q3k311E0C1Q/Screen%20Shot%202014-10-13%20at%209.32.59%20AM.png)
+![img-firebase-zapier](http://cl.ly/image/332a3T3v2z3T/Screen%20Shot%202014-10-13%20at%2010.07.09%20AM.png)
 
 You can either have the entire Twilio SMS object sent, or just save the fields you need, like `From`, `Date Sent` and `Body`
+
+Test your server.js file and your Zap using the "Test this Zap" section of the Zap editor. If all goes well, you should be able to see your `.on()` callback trigger when the Zap is tested.
+
+##Step 3: Start Front-end
+
+Create an Angular project in your `/public` directory. Let's start with a few ngRoutes:
+
+####`/`
+This will be a static template that will display the Twilio phone number and instructions on how to contact TextSupport. It could look something like this:
+
+![img-home-route](http://cl.ly/image/1U0F212q153w/Screen%20Shot%202014-10-13%20at%209.51.12%20AM.png)
+
+Let's have the `otherwise` catch-all point to this route as well.
+
+####`/support`
+This will be the route that will show all tickets and their conversations.
+* Set up a controller and a template for this route.
+* In the controller, point a scope variable to the 
 
 ####`POST /support/messages/`
 Using the twilio-node API, make it so that any POST sent to the above endpoint with will send a text to your number. Have the message passed as a JSON object.
