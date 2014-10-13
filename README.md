@@ -42,7 +42,7 @@ When matching up the Twilio SMS with the Firebase child record, you can use some
 
 You can either have the entire Twilio SMS object sent, or just save the fields you need, like `From`, `Date Sent` and `Body`
 
-Test your server.js file and your Zap using the "Test this Zap" section of the Zap editor. If all goes well, you should be able to see your `.on()` callback trigger when the Zap is tested.
+Test your server.js file and your Zap using the "Test this Zap" section of the Zap editor. If all goes well, you should be able to see your message data added to Firebase when the Zap is tested.
 
 ##Step 3: Start Front-end
 
