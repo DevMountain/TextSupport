@@ -18,7 +18,7 @@ Go here to see the project in action.
 ##Step 1: Prepare the Back-end
 Make sure you have a Twilio account set up and that you have your account ID and AuthToken ready.
 
-* Install `twilio-node` as a dependency 
+* Install `twilio` as a dependency 
 * Install `firebase` as a dependency
 * Create a server.js file that uses express and serves static files out of a `/public` directory. Create a simple index.html file in your public directory and test your server.js file to make sure static files are being served.
 * Make sure you have express and body-parser installed as dependencies and are using bodyParser.json() as middleware
