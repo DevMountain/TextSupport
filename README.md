@@ -12,9 +12,6 @@ twilio-node is a nicely packaged code library that interacts with the Twilio RES
 ###Firebase
 We'll use Firebase for syncing our back-end. After the Database portion of class, you'll be able to construct your own back-end. For now, Firebase will be a good go-between.
 
-##Check out Demo
-Go here to see the project in action.
-
 ##Step 1: Prepare the Back-end
 Make sure you have a Twilio account set up and that you have your account ID and AuthToken ready.
 
