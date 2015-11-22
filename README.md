@@ -3,9 +3,7 @@
 TextSupport
 ===========
 
-A project for creating a text support portal for Twilio/Angular.
-
-##Objectives
+##Objective
 Build a back-end that serves as a go-between between a Tech Support chat and SMS messaging via Twilio.
 
 ###The Twilio Node Library
